@@ -22,9 +22,13 @@ class cookiechoicesPublicBehaviours
 			$res .= '<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=cookiechoices/js/cookiechoices.js').
 					'"></script>'."\n";
 			$res .= '<script type="text/javascript">'."\n".
-				 	'document.addEventListener(\'DOMContentLoaded\', function(event) {'."\n".
-					'    cookieChoices.showCookieConsentDialog('."\n".
-					'		\''.html::escapeJS($core->blog->settings->cookiechoices->message).'\','."\n".
+				 	'document.addEventListener(\'DOMContentLoaded\', function(event) {'."\n";
+			if ($core->blog->settings->cookiechoices->topbar) {
+				$res .= '    cookieChoices.showCookieConsentBar('."\n";
+			} else {
+				$res .= '    cookieChoices.showCookieConsentDialog('."\n";
+			}
+			$res .= '		\''.html::escapeJS($core->blog->settings->cookiechoices->message).'\','."\n".
 					'		\''.html::escapeJS($core->blog->settings->cookiechoices->close).'\','."\n".
 					'		\''.html::escapeJS($core->blog->settings->cookiechoices->learnmore).'\','."\n".
 					'		\''.html::escapeJS($core->blog->settings->cookiechoices->url).'\');'."\n".
