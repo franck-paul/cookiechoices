@@ -27,26 +27,35 @@ class cookiechoicesAdminBehaviours
 		'<p><label class="classic">'.
 		form::checkbox('cookiechoices_enabled','1',html::escapeHTML($settings->cookiechoices->enabled)).
 		__('Enable Cookie Consent System').'</label></p>'.
-		'<p><label>'.
+		'<div class="two-cols">'.
+		'<div class="col">'.
+		'<p><label class="required" title="'.__('Required field').'"><abbr title="'.__('Required field').'">*</abbr> '.
 		__('Your message for visitors here:')." ".
 		form::field('cookiechoices_message',50,255,html::escapeHTML($settings->cookiechoices->message)).
 		'</label></p>'.
 		'<p class="form-note">'.__('Example:').' '.__('Cookies help us deliver our services. By using our services, you agree to our use of cookies.').'</p>'.
-		'<p><label>'.
+		'<p><label class="required" title="'.__('Required field').'"><abbr title="'.__('Required field').'">*</abbr> '.
 		__('Close message:')." ".
 		form::field('cookiechoices_close',30,255,html::escapeHTML($settings->cookiechoices->close)).
 		'</label></p>'.
 		'<p class="form-note">'.__('Example:').' '.__('Got it').'</p>'.
+		'</div>'.
+		'<div class="col">'.'<h5>'.__('Learn more link').'</h5>'.
 		'<p><label>'.
 		__('Learn more message:')." ".
 		form::field('cookiechoices_learnmore',30,255,html::escapeHTML($settings->cookiechoices->learnmore)).
 		'</label></p>'.
-		'<p class="form-note">'.__('Example:').' '.__('Learn more').'</p>'.
+		'<p class="form-note">'.__('Example:').' '.__('Learn more').' '.
+		__('(leave this field empty to not include this link)').'</p>'.
 		'<p><label>'.
 		__('URL (learn more):')." ".
 		form::field('cookiechoices_url',30,255,html::escapeHTML($settings->cookiechoices->url)).
 		'</label></p>'.
-		'<p class="form-note">'.__('Example:').' '.__('https://www.cookiechoices.org/').'</p>'.
+		'<p class="form-note">'.__('Example:').' '.__('https://www.cookiechoices.org/').' '.
+		__('(leave this field empty to not include this link)').'</p>'.
+		'</div>'.
+		'</div>'.
+		'<br class="clear" />'. //Opera sucks
 		'<p><label class="classic">'.
 		form::checkbox('cookiechoices_topbar','1',html::escapeHTML($settings->cookiechoices->topbar)).
 		__('Display message as a bar on top').'</label></p>'.
