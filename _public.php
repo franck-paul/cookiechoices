@@ -19,7 +19,7 @@ class cookiechoicesPublicBehaviours
 	{
 		if ($core->blog->settings->cookiechoices->enabled && $core->blog->settings->cookiechoices->message != '') {
 
-			$res .= '<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=cookiechoices/js/cookiechoices.js').
+			$res = '<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=cookiechoices/js/cookiechoices.js').
 					'"></script>'."\n";
 			$res .= '<script type="text/javascript">'."\n".
 				 	'document.addEventListener(\'DOMContentLoaded\', function(event) {'."\n";
