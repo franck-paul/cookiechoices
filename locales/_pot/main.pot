@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 cookiechoices module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-09 19:42+0100\n"
+"POT-Creation-Date: 2015-06-17 09:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,67 +16,71 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../hg-plugins/cookiechoices//_admin.php:15
-#: ../hg-plugins/cookiechoices//_admin.php:26
+#: ../hg-plugins/cookiechoices/_admin.php:15
+#: ../hg-plugins/cookiechoices/_admin.php:26
 msgid "Cookie Consent System"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:15
+#: ../hg-plugins/cookiechoices/_admin.php:15
 msgid "cookiechoices"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:29
+#: ../hg-plugins/cookiechoices/_admin.php:29
 msgid "Enable Cookie Consent System"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:33
+#: ../hg-plugins/cookiechoices/_admin.php:33
 msgid "Your message for visitors here:"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:36
+#: ../hg-plugins/cookiechoices/_admin.php:36
 msgid "Cookies help us deliver our services. By using our services, you agree to our use of cookies."
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:36
-#: ../hg-plugins/cookiechoices//_admin.php:41
-#: ../hg-plugins/cookiechoices//_admin.php:48
-#: ../hg-plugins/cookiechoices//_admin.php:54
+#: ../hg-plugins/cookiechoices/_admin.php:36
+#: ../hg-plugins/cookiechoices/_admin.php:41
+#: ../hg-plugins/cookiechoices/_admin.php:48
+#: ../hg-plugins/cookiechoices/_admin.php:54
 msgid "Example:"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:38
+#: ../hg-plugins/cookiechoices/_admin.php:38
 msgid "Close message:"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:41
+#: ../hg-plugins/cookiechoices/_admin.php:41
 msgid "Got it"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:43
+#: ../hg-plugins/cookiechoices/_admin.php:43
 msgid "Learn more link"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:45
+#: ../hg-plugins/cookiechoices/_admin.php:45
 msgid "Learn more message:"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:48
+#: ../hg-plugins/cookiechoices/_admin.php:48
 msgid "Learn more"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:49
-#: ../hg-plugins/cookiechoices//_admin.php:55
+#: ../hg-plugins/cookiechoices/_admin.php:49
+#: ../hg-plugins/cookiechoices/_admin.php:55
 msgid "(leave this field empty to not include this link)"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:51
+#: ../hg-plugins/cookiechoices/_admin.php:51
 msgid "URL (learn more):"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:54
+#: ../hg-plugins/cookiechoices/_admin.php:54
 msgid "https://www.cookiechoices.org/"
 msgstr ""
 
-#: ../hg-plugins/cookiechoices//_admin.php:61
+#: ../hg-plugins/cookiechoices/_admin.php:61
 msgid "Display message as a bar on top"
+msgstr ""
+
+#: ../hg-plugins/cookiechoices/_admin.php:64
+msgid "Display message on every page"
 msgstr ""

@@ -59,6 +59,9 @@ class cookiechoicesAdminBehaviours
 		'<p><label class="classic">'.
 		form::checkbox('cookiechoices_topbar','1',html::escapeHTML($settings->cookiechoices->topbar)).
 		__('Display message as a bar on top').'</label></p>'.
+		'<p><label class="classic">'.
+		form::checkbox('cookiechoices_anywhere','1',html::escapeHTML($settings->cookiechoices->anywhere)).
+		__('Display message on every page').'</label></p>'.
 		'</div>';
 	}
 	public static function adminBeforeBlogSettingsUpdate($settings)
@@ -70,5 +73,6 @@ class cookiechoicesAdminBehaviours
 		$settings->cookiechoices->put('learnmore',empty($_POST['cookiechoices_learnmore'])?"":$_POST['cookiechoices_learnmore'],'string');
 		$settings->cookiechoices->put('url',empty($_POST['cookiechoices_url'])?"":$_POST['cookiechoices_url'],'string');
 		$settings->cookiechoices->put('topbar',!empty($_POST['cookiechoices_topbar']),'boolean');
+		$settings->cookiechoices->put('anywhere',!empty($_POST['cookiechoices_anywhere']),'boolean');
 	}
 }

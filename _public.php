@@ -18,24 +18,25 @@ class cookiechoicesPublicBehaviours
 	public static function publicFooterContent($core)
 	{
 		if ($core->blog->settings->cookiechoices->enabled && $core->blog->settings->cookiechoices->message != '') {
+			if ($core->blog->settings->cookiechoices->anywhere || $core->url->type == 'default') {
+				$res = '<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=cookiechoices/js/cookiechoices.js').
+						'"></script>'."\n";
+				$res .= '<script type="text/javascript">'."\n".
+					 	'document.addEventListener(\'DOMContentLoaded\', function(event) {'."\n";
+				if ($core->blog->settings->cookiechoices->topbar) {
+					$res .= '    cookieChoices.showCookieConsentBar('."\n";
+				} else {
+					$res .= '    cookieChoices.showCookieConsentDialog('."\n";
+				}
+				$res .= '		\''.html::escapeJS($core->blog->settings->cookiechoices->message).'\','."\n".
+						'		\''.html::escapeJS($core->blog->settings->cookiechoices->close).'\','."\n".
+						'		\''.html::escapeJS($core->blog->settings->cookiechoices->learnmore).'\','."\n".
+						'		\''.html::escapeJS($core->blog->settings->cookiechoices->url).'\');'."\n".
+						'});'."\n".
+						'</script>'."\n";
 
-			$res = '<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=cookiechoices/js/cookiechoices.js').
-					'"></script>'."\n";
-			$res .= '<script type="text/javascript">'."\n".
-				 	'document.addEventListener(\'DOMContentLoaded\', function(event) {'."\n";
-			if ($core->blog->settings->cookiechoices->topbar) {
-				$res .= '    cookieChoices.showCookieConsentBar('."\n";
-			} else {
-				$res .= '    cookieChoices.showCookieConsentDialog('."\n";
+				echo $res;
 			}
-			$res .= '		\''.html::escapeJS($core->blog->settings->cookiechoices->message).'\','."\n".
-					'		\''.html::escapeJS($core->blog->settings->cookiechoices->close).'\','."\n".
-					'		\''.html::escapeJS($core->blog->settings->cookiechoices->learnmore).'\','."\n".
-					'		\''.html::escapeJS($core->blog->settings->cookiechoices->url).'\');'."\n".
-					'});'."\n".
-					'</script>'."\n";
-
-			echo $res;
 		}
 	}
 }
