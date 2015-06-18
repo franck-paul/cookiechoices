@@ -26,10 +26,10 @@ msgid "Enable Cookie Consent System"
 msgstr "Activer le système de consentement pour les cookies"
 
 msgid "Your message for visitors here:"
-msgstr "Le message pour vos visiteur ici :"
+msgstr "Le message pour vos visiteurs ici :"
 
 msgid "Cookies help us deliver our services. By using our services, you agree to our use of cookies."
-msgstr "Les cookies nous aident à délivrer nos service. En utilisant nos services vous agréez l'usage de cookies."
+msgstr "Les cookies nous aident à délivrer nos services. En utilisant nos services vous agréez l'usage de cookies."
 
 msgid "Example:"
 msgstr "Exemple :"
