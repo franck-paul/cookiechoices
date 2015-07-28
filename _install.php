@@ -23,7 +23,7 @@ $core->blog->settings->cookiechoices->put('message','By using our services, you 
 $core->blog->settings->cookiechoices->put('close','Got it','string','Close message',true,true);
 $core->blog->settings->cookiechoices->put('learnmore','Learn more','string','Learn more message',true,true);
 $core->blog->settings->cookiechoices->put('url','https://www.cookiechoices.org/','string','Learn more URL',true,true);
-$core->blog->settings->cookiechoices->put('appearance',0,'integer','Message appearance',true,true);
+$core->blog->settings->cookiechoices->put('appearance',2,'integer','Message appearance',true,true);
 $core->blog->settings->cookiechoices->put('anywhere',false,'boolean','Display message on every page',true,true);
 
 $core->setVersion('cookiechoices',$this_version);
