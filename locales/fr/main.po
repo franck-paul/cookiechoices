@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 cookiechoices module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-17 09:54+0200\n"
+"POT-Creation-Date: 2015-07-28 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,15 @@ msgstr "Système de consentement pour les cookies"
 
 msgid "cookiechoices"
 msgstr "cookiechoices"
+
+msgid "A dialog box"
+msgstr "Une boîte de dialogue"
+
+msgid "A bar on top"
+msgstr "Une barre en haut de la page"
+
+msgid "A bar on bottom"
+msgstr "Une barre en bas de la page"
 
 msgid "Enable Cookie Consent System"
 msgstr "Activer le système de consentement pour les cookies"
@@ -58,8 +67,8 @@ msgstr "URL pour en savoir plus :"
 msgid "https://www.cookiechoices.org/"
 msgstr "https://www.cookiechoices.org/"
 
-msgid "Display message as a bar on top"
-msgstr "Afficher le message dans une barre en haut de la page"
-
 msgid "Display message on every page"
 msgstr "Afficher le message sur toutes les pages"
+
+msgid "Display message as:"
+msgstr "Afficher le message dans :"

@@ -19,9 +19,18 @@ $core->addBehavior('adminBeforeBlogSettingsUpdate',array('cookiechoicesAdminBeha
 
 class cookiechoicesAdminBehaviours
 {
+
 	public static function adminBlogPreferencesForm($core,$settings)
 	{
 		$settings->addNameSpace('cookiechoices');
+
+		// Appearances of message
+		$cookiechoices_appearance = array(
+			0 => __('A dialog box'),
+			1 => __('A bar on top'),
+			2 => __('A bar on bottom')
+		);
+
 		echo
 		'<div class="fieldset"><h4>'.__('Cookie Consent System').'</h4>'.
 		'<p><label class="classic">'.
@@ -55,13 +64,24 @@ class cookiechoicesAdminBehaviours
 		__('(leave this field empty to not include this link)').'</p>'.
 		'</div>'.
 		'</div>'.
-		'<br class="clear" />'. //Opera sucks
-		'<p><label class="classic">'.
-		form::checkbox('cookiechoices_topbar','1',html::escapeHTML($settings->cookiechoices->topbar)).
-		__('Display message as a bar on top').'</label></p>'.
+		'<br class="clear" />'; //Opera sucks
+
+		echo
 		'<p><label class="classic">'.
 		form::checkbox('cookiechoices_anywhere','1',html::escapeHTML($settings->cookiechoices->anywhere)).
-		__('Display message on every page').'</label></p>'.
+		__('Display message on every page').'</label></p>';
+
+		echo '<h5>'.__('Display message as:').'</h5>';
+		$i = 0;
+		foreach ($cookiechoices_appearance as $k => $v)
+		{
+			echo '<p><label for="dashes_mode-'.$i.'" class="classic">'.
+			form::radio(array('cookiechoices_appearance','cookiechoices_appearance-'.$i),
+				$k,$settings->cookiechoices->appearance == $k).' '.$v.'</label></p>';
+			$i++;
+		}
+
+		echo
 		'</div>';
 	}
 	public static function adminBeforeBlogSettingsUpdate($settings)
@@ -72,7 +92,7 @@ class cookiechoicesAdminBehaviours
 		$settings->cookiechoices->put('close',empty($_POST['cookiechoices_close'])?"":$_POST['cookiechoices_close'],'string');
 		$settings->cookiechoices->put('learnmore',empty($_POST['cookiechoices_learnmore'])?"":$_POST['cookiechoices_learnmore'],'string');
 		$settings->cookiechoices->put('url',empty($_POST['cookiechoices_url'])?"":$_POST['cookiechoices_url'],'string');
-		$settings->cookiechoices->put('topbar',!empty($_POST['cookiechoices_topbar']),'boolean');
+		$settings->cookiechoices->put('appearance',$_POST['cookiechoices_appearance'],'integer');
 		$settings->cookiechoices->put('anywhere',!empty($_POST['cookiechoices_anywhere']),'boolean');
 	}
 }

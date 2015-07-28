@@ -30,9 +30,9 @@
     var cookieConsentId = 'cookieChoiceInfo';
     var dismissLinkId = 'cookieChoiceDismiss';
 
-    function _createHeaderElement(cookieText, dismissText, linkText, linkHref) {
+    function _createHeaderElement(cookieText, dismissText, linkText, linkHref, bottomBar) {
       var butterBarStyles = 'position:fixed;width:100%;background-color:#eee;' +
-          'margin:0; left:0; top:0;padding:4px;z-index:1000;text-align:center;';
+          'margin:0; left:0; '+(bottomBar ? 'bottom' : 'top')+':0;padding:4px;z-index:1000;text-align:center;';
 
       var cookieConsentElement = document.createElement('div');
       cookieConsentElement.id = cookieConsentId;
@@ -120,12 +120,12 @@
       return false;
     }
 
-    function _showCookieConsent(cookieText, dismissText, linkText, linkHref, isDialog) {
+    function _showCookieConsent(cookieText, dismissText, linkText, linkHref, isDialog, bottomBar) {
       if (_shouldDisplayConsent()) {
         _removeCookieConsent();
         var consentElement = (isDialog) ?
             _createDialogElement(cookieText, dismissText, linkText, linkHref) :
-            _createHeaderElement(cookieText, dismissText, linkText, linkHref);
+            _createHeaderElement(cookieText, dismissText, linkText, linkHref, bottomBar);
         var fragment = document.createDocumentFragment();
         fragment.appendChild(consentElement);
         document.body.appendChild(fragment.cloneNode(true));
@@ -133,17 +133,17 @@
       }
     }
 
-    function showCookieConsentBar(cookieText, dismissText, linkText, linkHref) {
-      _showCookieConsent(cookieText, dismissText, linkText, linkHref, false);
+    function showCookieConsentBar(cookieText, dismissText, linkText, linkHref, bottomBar) {
+      _showCookieConsent(cookieText, dismissText, linkText, linkHref, false, bottomBar);
     }
 
-    function showCookieConsentDialog(cookieText, dismissText, linkText, linkHref) {
-      _showCookieConsent(cookieText, dismissText, linkText, linkHref, true);
+    function showCookieConsentDialog(cookieText, dismissText, linkText, linkHref, bottomBar) {
+      _showCookieConsent(cookieText, dismissText, linkText, linkHref, true, false);
     }
 
     function _removeCookieConsent() {
       var cookieChoiceElement = document.getElementById(cookieConsentId);
-      if (cookieChoiceElement != null) {
+      if (cookieChoiceElement !== null) {
         cookieChoiceElement.parentNode.removeChild(cookieChoiceElement);
       }
     }

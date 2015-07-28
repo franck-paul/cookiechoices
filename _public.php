@@ -23,15 +23,16 @@ class cookiechoicesPublicBehaviours
 						'"></script>'."\n";
 				$res .= '<script type="text/javascript">'."\n".
 					 	'document.addEventListener(\'DOMContentLoaded\', function(event) {'."\n";
-				if ($core->blog->settings->cookiechoices->topbar) {
-					$res .= '    cookieChoices.showCookieConsentBar('."\n";
-				} else {
+				if (!$core->blog->settings->cookiechoices->appearance) {
 					$res .= '    cookieChoices.showCookieConsentDialog('."\n";
+				} else {
+					$res .= '    cookieChoices.showCookieConsentBar('."\n";
 				}
 				$res .= '		\''.html::escapeJS($core->blog->settings->cookiechoices->message).'\','."\n".
 						'		\''.html::escapeJS($core->blog->settings->cookiechoices->close).'\','."\n".
 						'		\''.html::escapeJS($core->blog->settings->cookiechoices->learnmore).'\','."\n".
-						'		\''.html::escapeJS($core->blog->settings->cookiechoices->url).'\');'."\n".
+						'		\''.html::escapeJS($core->blog->settings->cookiechoices->url).'\','."\n".
+						'		'.($core->blog->settings->cookiechoices->appearance == 1 ? 'false' : 'true').');'."\n".
 						'});'."\n".
 						'</script>'."\n";
 
