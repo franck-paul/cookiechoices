@@ -15,8 +15,9 @@ $this->registerModule(
 	/* Name */			"cookiechoices",
 	/* Description*/	"Cookie Consent System",
 	/* Author */		"Franck Paul",
-	/* Version */		'0.4',
+	/* Version */		'0.5',
 	array(
+		/* Dependencies */	'requires' =>		array(array('core','2.9')),
 		/* Permissions */	'permissions' =>	'contentadmin',
 		/* Type */			'type' =>			'plugin'
 	)

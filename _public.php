@@ -19,8 +19,7 @@ class cookiechoicesPublicBehaviours
 	{
 		if ($core->blog->settings->cookiechoices->enabled && $core->blog->settings->cookiechoices->message != '') {
 			if ($core->blog->settings->cookiechoices->anywhere || $core->url->type == 'default') {
-				$res = '<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=cookiechoices/js/cookiechoices.js').
-						'"></script>'."\n";
+				$res = dcUtils::jsLoad($core->blog->getPF('cookiechoices/js/cookiechoices.js')).
 				$res .= '<script type="text/javascript">'."\n".
 					 	'document.addEventListener(\'DOMContentLoaded\', function(event) {'."\n";
 				if (!$core->blog->settings->cookiechoices->appearance) {
