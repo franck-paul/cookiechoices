@@ -13,7 +13,7 @@
 
 if (!defined('DC_RC_PATH')) {return;}
 
-$core->addBehavior('publicFooterContent', array('cookiechoicesPublicBehaviours', 'publicFooterContent'));
+$core->addBehavior('publicFooterContent', ['cookiechoicesPublicBehaviours', 'publicFooterContent']);
 
 class cookiechoicesPublicBehaviours
 {

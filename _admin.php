@@ -16,8 +16,8 @@ if (!defined('DC_CONTEXT_ADMIN')) {return;}
 // dead but useful code, in order to have translations
 __('cookiechoices') . __('Cookie Consent System');
 
-$core->addBehavior('adminBlogPreferencesForm', array('cookiechoicesAdminBehaviours', 'adminBlogPreferencesForm'));
-$core->addBehavior('adminBeforeBlogSettingsUpdate', array('cookiechoicesAdminBehaviours', 'adminBeforeBlogSettingsUpdate'));
+$core->addBehavior('adminBlogPreferencesForm', ['cookiechoicesAdminBehaviours', 'adminBlogPreferencesForm']);
+$core->addBehavior('adminBeforeBlogSettingsUpdate', ['cookiechoicesAdminBehaviours', 'adminBeforeBlogSettingsUpdate']);
 
 class cookiechoicesAdminBehaviours
 {
@@ -27,11 +27,11 @@ class cookiechoicesAdminBehaviours
         $settings->addNameSpace('cookiechoices');
 
         // Appearances of message
-        $cookiechoices_appearance = array(
+        $cookiechoices_appearance = [
             0 => __('A dialog box'),
             1 => __('A bar on top'),
             2 => __('A bar on bottom')
-        );
+        ];
 
         echo
         '<div class="fieldset"><h4>' . __('Cookie Consent System') . '</h4>' .
@@ -76,7 +76,7 @@ class cookiechoicesAdminBehaviours
         $i = 0;
         foreach ($cookiechoices_appearance as $k => $v) {
             echo '<p><label for="dashes_mode-' . $i . '" class="classic">' .
-            form::radio(array('cookiechoices_appearance', 'cookiechoices_appearance-' . $i),
+            form::radio(['cookiechoices_appearance', 'cookiechoices_appearance-' . $i],
                 $k, $settings->cookiechoices->appearance == $k) . ' ' . $v . '</label></p>';
             $i++;
         }

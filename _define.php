@@ -17,10 +17,10 @@ $this->registerModule(
     "cookiechoices",         // Name
     "Cookie Consent System", // Description
     "Franck Paul",           // Author
-    '0.5',                   // Version
-    array(
-        'requires'    => array(array('core', '2.9')), // Dependencies
-        'permissions' => 'contentadmin',              // Permissions
-        'type'        => 'plugin'                    // Type
-    )
+    '0.6',                   // Version
+    [
+        'requires'    => [['core', '2.13']], // Dependencies
+        'permissions' => 'contentadmin',     // Permissions
+        'type'        => 'plugin'           // Type
+    ]
 );
