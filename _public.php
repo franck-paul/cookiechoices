@@ -22,7 +22,7 @@ class cookiechoicesPublicBehaviours
         if ($core->blog->settings->cookiechoices->enabled && $core->blog->settings->cookiechoices->message != '') {
             if ($core->blog->settings->cookiechoices->anywhere || $core->url->type == 'default') {
                 $res = dcUtils::jsLoad($core->blog->getPF('cookiechoices/js/cookiechoices.js'));
-                $res .= '<script type="text/javascript">' . "\n" .
+                $res .= '<script>' . "\n" .
                     'document.addEventListener(\'DOMContentLoaded\', function(event) {' . "\n";
                 if (!$core->blog->settings->cookiechoices->appearance) {
                     $res .= '    cookieChoices.showCookieConsentDialog(' . "\n";
