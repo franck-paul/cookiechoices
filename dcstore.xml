@@ -1,8 +1,8 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="cookiechoices">
-    <name>cookiechoices</name>
+    <name>Cookie Consent System</name>
     <version>0.5</version>
-    <author>Franck Paul</author>
+    <author>Cookie Consent System</author>
     <desc>Cookie Consent System</desc>
     <file>https://github.com/franck-paul/cookiechoices/releases/download/0.5/plugin-cookiechoices-0.5.zip</file>
     <da:dcmin>2.13</da:dcmin>
