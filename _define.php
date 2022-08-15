@@ -18,14 +18,14 @@ $this->registerModule(
     'cookiechoices',         // Name
     'Cookie Consent System', // Description
     'Franck Paul',           // Author
-    '0.5',                   // Version
+    '0.6',
     [
-        'requires'    => [['core', '2.13']], // Dependencies
+        'requires'    => [['core', '2.23']], // Dependencies
         'permissions' => 'contentadmin',     // Permissions
         'type'        => 'plugin',           // Type
 
         'details'    => 'https://open-time.net/?q=cookiechoices',       // Details URL
         'support'    => 'https://github.com/franck-paul/cookiechoices', // Support URL
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/cookiechoices/master/dcstore.xml'
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/cookiechoices/master/dcstore.xml',
     ]
 );

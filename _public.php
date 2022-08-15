@@ -10,30 +10,31 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 
-if (!defined('DC_RC_PATH')) {return;}
-
-$core->addBehavior('publicFooterContent', ['cookiechoicesPublicBehaviours', 'publicFooterContent']);
+dcCore::app()->addBehavior('publicFooterContent', ['cookiechoicesPublicBehaviours', 'publicFooterContent']);
 
 class cookiechoicesPublicBehaviours
 {
     public static function publicFooterContent($core)
     {
-        if ($core->blog->settings->cookiechoices->enabled && $core->blog->settings->cookiechoices->message != '') {
-            if ($core->blog->settings->cookiechoices->anywhere || $core->url->type == 'default') {
-                $res = dcUtils::jsLoad($core->blog->getPF('cookiechoices/js/cookiechoices.js'));
+        if (dcCore::app()->blog->settings->cookiechoices->enabled && dcCore::app()->blog->settings->cookiechoices->message != '') {
+            if (dcCore::app()->blog->settings->cookiechoices->anywhere || dcCore::app()->url->type == 'default') {
+                $res = dcUtils::jsModuleLoad('cookiechoices/js/cookiechoices.js');
                 $res .= '<script>' . "\n" .
                     'document.addEventListener(\'DOMContentLoaded\', function(event) {' . "\n";
-                if (!$core->blog->settings->cookiechoices->appearance) {
+                if (!dcCore::app()->blog->settings->cookiechoices->appearance) {
                     $res .= '    cookieChoices.showCookieConsentDialog(' . "\n";
                 } else {
                     $res .= '    cookieChoices.showCookieConsentBar(' . "\n";
                 }
-                $res .= '   \'' . html::escapeJS($core->blog->settings->cookiechoices->message) . '\',' . "\n" .
-                '   \'' . html::escapeJS($core->blog->settings->cookiechoices->close) . '\',' . "\n" .
-                '   \'' . html::escapeJS($core->blog->settings->cookiechoices->learnmore) . '\',' . "\n" .
-                '   \'' . html::escapeJS($core->blog->settings->cookiechoices->url) . '\',' . "\n" .
-                    '   ' . ($core->blog->settings->cookiechoices->appearance == 1 ? 'false' : 'true') . ');' . "\n" .
+                $res .= '   \'' . html::escapeJS(dcCore::app()->blog->settings->cookiechoices->message) . '\',' . "\n" .
+                '   \'' . html::escapeJS(dcCore::app()->blog->settings->cookiechoices->close) . '\',' . "\n" .
+                '   \'' . html::escapeJS(dcCore::app()->blog->settings->cookiechoices->learnmore) . '\',' . "\n" .
+                '   \'' . html::escapeJS(dcCore::app()->blog->settings->cookiechoices->url) . '\',' . "\n" .
+                    '   ' . (dcCore::app()->blog->settings->cookiechoices->appearance == 1 ? 'false' : 'true') . ');' . "\n" .
                     '});' . "\n" .
                     '</script>' . "\n";
 
