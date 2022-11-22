@@ -14,11 +14,9 @@ if (!defined('DC_RC_PATH')) {
     return;
 }
 
-dcCore::app()->addBehavior('publicFooterContent', ['cookiechoicesPublicBehaviours', 'publicFooterContent']);
-
 class cookiechoicesPublicBehaviours
 {
-    public static function publicFooterContent($core)
+    public static function publicFooterContent()
     {
         if (dcCore::app()->blog->settings->cookiechoices->enabled && dcCore::app()->blog->settings->cookiechoices->message != '') {
             if (dcCore::app()->blog->settings->cookiechoices->anywhere || dcCore::app()->url->type == 'default') {
@@ -43,3 +41,5 @@ class cookiechoicesPublicBehaviours
         }
     }
 }
+
+dcCore::app()->addBehavior('publicFooterContent', [cookiechoicesPublicBehaviours::class, 'publicFooterContent']);

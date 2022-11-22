@@ -15,17 +15,19 @@ if (!defined('DC_RC_PATH')) {
 }
 
 $this->registerModule(
-    'cookiechoices',         // Name
-    'Cookie Consent System', // Description
-    'Franck Paul',           // Author
-    '0.6',
+    'cookiechoices',
+    'Cookie Consent System',
+    'Franck Paul',
+    '0.7',
     [
-        'requires'    => [['core', '2.23']], // Dependencies
-        'permissions' => 'contentadmin',     // Permissions
-        'type'        => 'plugin',           // Type
+        'requires'    => [['core', '2.24']],
+        'permissions' => dcCore::app()->auth->makePermissions([
+            dcAuth::PERMISSION_CONTENT_ADMIN,
+        ]),
+        'type' => 'plugin',
 
-        'details'    => 'https://open-time.net/?q=cookiechoices',       // Details URL
-        'support'    => 'https://github.com/franck-paul/cookiechoices', // Support URL
+        'details'    => 'https://open-time.net/?q=cookiechoices',
+        'support'    => 'https://github.com/franck-paul/cookiechoices',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/cookiechoices/master/dcstore.xml',
     ]
 );

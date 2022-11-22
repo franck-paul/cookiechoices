@@ -17,12 +17,9 @@ if (!defined('DC_CONTEXT_ADMIN')) {
 // dead but useful code, in order to have translations
 __('cookiechoices') . __('Cookie Consent System');
 
-dcCore::app()->addBehavior('adminBlogPreferencesForm', ['cookiechoicesAdminBehaviours', 'adminBlogPreferencesForm']);
-dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', ['cookiechoicesAdminBehaviours', 'adminBeforeBlogSettingsUpdate']);
-
 class cookiechoicesAdminBehaviours
 {
-    public static function adminBlogPreferencesForm($core, $settings)
+    public static function adminBlogPreferencesForm($settings)
     {
         $settings->addNameSpace('cookiechoices');
 
@@ -99,3 +96,6 @@ class cookiechoicesAdminBehaviours
         $settings->cookiechoices->put('anywhere', !empty($_POST['cookiechoices_anywhere']), 'boolean');
     }
 }
+
+dcCore::app()->addBehavior('adminBlogPreferencesFormV2', [cookiechoicesAdminBehaviours::class, 'adminBlogPreferencesForm']);
+dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', [cookiechoicesAdminBehaviours::class, 'adminBeforeBlogSettingsUpdate']);
