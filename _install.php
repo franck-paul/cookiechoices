@@ -17,7 +17,7 @@ if (!defined('DC_CONTEXT_ADMIN')) {
 $this_version      = dcCore::app()->plugins->moduleInfo('cookiechoices', 'version');
 $installed_version = dcCore::app()->getVersion('cookiechoices');
 
-if (version_compare($installed_version, $this_version, '>=')) {
+if (version_compare((string) $installed_version, $this_version, '>=')) {
     return;
 }
 
