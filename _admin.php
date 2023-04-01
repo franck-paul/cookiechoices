@@ -10,6 +10,9 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
+
+use Dotclear\Helper\Html\Html;
+
 if (!defined('DC_CONTEXT_ADMIN')) {
     return;
 }
@@ -21,8 +24,6 @@ class cookiechoicesAdminBehaviours
 {
     public static function adminBlogPreferencesForm($settings)
     {
-        $settings->addNameSpace('cookiechoices');
-
         // Appearances of message
         $cookiechoices_appearance = [
             0 => __('A dialog box'),
@@ -33,31 +34,31 @@ class cookiechoicesAdminBehaviours
         echo
         '<div class="fieldset"><h4>' . __('Cookie Consent System') . '</h4>' .
         '<p><label class="classic">' .
-        form::checkbox('cookiechoices_enabled', '1', html::escapeHTML($settings->cookiechoices->enabled)) .
+        form::checkbox('cookiechoices_enabled', '1', Html::escapeHTML($settings->cookiechoices->enabled)) .
         __('Enable Cookie Consent System') . '</label></p>' .
         '<div class="two-cols">' .
         '<div class="col">' .
         '<p><label class="required" title="' . __('Required field') . '"><abbr title="' . __('Required field') . '">*</abbr> ' .
         __('Your message for visitors here:') . ' ' .
-        form::field('cookiechoices_message', 50, 255, html::escapeHTML($settings->cookiechoices->message), '', '', false, 'required placeholder="' . __('Message') . '"') .
+        form::field('cookiechoices_message', 50, 255, Html::escapeHTML($settings->cookiechoices->message), '', '', false, 'required placeholder="' . __('Message') . '"') .
         '</label></p>' .
         '<p class="form-note">' . __('Example:') . ' ' . __('Cookies help us deliver our services. By using our services, you agree to our use of cookies.') . '</p>' .
         '<p><label class="required" title="' . __('Required field') . '"><abbr title="' . __('Required field') . '">*</abbr> ' .
         __('Close message:') . ' ' .
-        form::field('cookiechoices_close', 30, 255, html::escapeHTML($settings->cookiechoices->close), '', '', false, 'required placeholder="' . __('Message') . '"') .
+        form::field('cookiechoices_close', 30, 255, Html::escapeHTML($settings->cookiechoices->close), '', '', false, 'required placeholder="' . __('Message') . '"') .
         '</label></p>' .
         '<p class="form-note">' . __('Example:') . ' ' . __('Got it') . '</p>' .
         '</div>' .
         '<div class="col">' . '<h5>' . __('Learn more link') . '</h5>' .
         '<p><label>' .
         __('Learn more message:') . ' ' .
-        form::field('cookiechoices_learnmore', 30, 255, html::escapeHTML($settings->cookiechoices->learnmore)) .
+        form::field('cookiechoices_learnmore', 30, 255, Html::escapeHTML($settings->cookiechoices->learnmore)) .
         '</label></p>' .
         '<p class="form-note">' . __('Example:') . ' ' . __('Learn more') . ' ' .
         __('(leave this field empty to not include this link)') . '</p>' .
         '<p><label>' .
         __('URL (learn more):') . ' ' .
-        form::field('cookiechoices_url', 30, 255, html::escapeHTML($settings->cookiechoices->url)) .
+        form::field('cookiechoices_url', 30, 255, Html::escapeHTML($settings->cookiechoices->url)) .
         '</label></p>' .
         '<p class="form-note">' . __('Example:') . ' ' . __('https://www.cookiechoices.org/') . ' ' .
         __('(leave this field empty to not include this link)') . '</p>' .
@@ -66,7 +67,7 @@ class cookiechoicesAdminBehaviours
 
         echo
         '<p><label class="classic">' .
-        form::checkbox('cookiechoices_anywhere', '1', html::escapeHTML($settings->cookiechoices->anywhere)) .
+        form::checkbox('cookiechoices_anywhere', '1', Html::escapeHTML($settings->cookiechoices->anywhere)) .
         __('Display message on every page') . '</label></p>';
 
         echo '<h5>' . __('Display message as:') . '</h5>';
@@ -86,7 +87,6 @@ class cookiechoicesAdminBehaviours
     }
     public static function adminBeforeBlogSettingsUpdate($settings)
     {
-        $settings->addNameSpace('cookiechoices');
         $settings->cookiechoices->put('enabled', !empty($_POST['cookiechoices_enabled']), 'boolean');
         $settings->cookiechoices->put('message', empty($_POST['cookiechoices_message']) ? '' : $_POST['cookiechoices_message'], 'string');
         $settings->cookiechoices->put('close', empty($_POST['cookiechoices_close']) ? '' : $_POST['cookiechoices_close'], 'string');
@@ -97,5 +97,7 @@ class cookiechoicesAdminBehaviours
     }
 }
 
-dcCore::app()->addBehavior('adminBlogPreferencesFormV2', [cookiechoicesAdminBehaviours::class, 'adminBlogPreferencesForm']);
-dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', [cookiechoicesAdminBehaviours::class, 'adminBeforeBlogSettingsUpdate']);
+dcCore::app()->addBehaviors([
+    'adminBlogPreferencesFormV2'    => [cookiechoicesAdminBehaviours::class, 'adminBlogPreferencesForm'],
+    'adminBeforeBlogSettingsUpdate' => [cookiechoicesAdminBehaviours::class, 'adminBeforeBlogSettingsUpdate'],
+]);

@@ -10,9 +10,8 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-if (!defined('DC_RC_PATH')) {
-    return;
-}
+
+use Dotclear\Helper\Html\Html;
 
 class cookiechoicesPublicBehaviours
 {
@@ -28,10 +27,10 @@ class cookiechoicesPublicBehaviours
                 } else {
                     $res .= '    cookieChoices.showCookieConsentBar(' . "\n";
                 }
-                $res .= '   \'' . html::escapeJS(dcCore::app()->blog->settings->cookiechoices->message) . '\',' . "\n" .
-                '   \'' . html::escapeJS(dcCore::app()->blog->settings->cookiechoices->close) . '\',' . "\n" .
-                '   \'' . html::escapeJS(dcCore::app()->blog->settings->cookiechoices->learnmore) . '\',' . "\n" .
-                '   \'' . html::escapeJS(dcCore::app()->blog->settings->cookiechoices->url) . '\',' . "\n" .
+                $res .= '   \'' . Html::escapeJS(dcCore::app()->blog->settings->cookiechoices->message) . '\',' . "\n" .
+                '   \'' . Html::escapeJS(dcCore::app()->blog->settings->cookiechoices->close) . '\',' . "\n" .
+                '   \'' . Html::escapeJS(dcCore::app()->blog->settings->cookiechoices->learnmore) . '\',' . "\n" .
+                '   \'' . Html::escapeJS(dcCore::app()->blog->settings->cookiechoices->url) . '\',' . "\n" .
                     '   ' . (dcCore::app()->blog->settings->cookiechoices->appearance == 1 ? 'false' : 'true') . ');' . "\n" .
                     '});' . "\n" .
                     '</script>' . "\n";
