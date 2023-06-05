@@ -17,22 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Cookie Consent System"
-msgstr "Système de consentement pour les cookies"
+msgstr ""
 
 msgid "cookiechoices"
-msgstr "cookiechoices"
+msgstr ""
 
 msgid "A dialog box"
-msgstr "Une boîte de dialogue"
+msgstr ""
 
 msgid "A bar on top"
-msgstr "Une barre en haut de la page"
+msgstr ""
 
 msgid "A bar on bottom"
-msgstr "Une barre en bas de la page"
+msgstr ""
 
 msgid "Enable Cookie Consent System"
-msgstr "Activer le système de consentement pour les cookies"
+msgstr ""
 
 msgid "Messages"
 msgstr ""
@@ -41,40 +41,40 @@ msgid "Message"
 msgstr ""
 
 msgid "Your message for visitors here:"
-msgstr "Le message pour vos visiteurs ici :"
+msgstr ""
 
 msgid "Cookies help us deliver our services. By using our services, you agree to our use of cookies."
-msgstr "Les cookies nous aident à délivrer nos services. En utilisant nos services vous agréez l'usage de cookies."
+msgstr ""
 
 msgid "Example:"
-msgstr "Exemple :"
+msgstr ""
 
 msgid "Close message:"
-msgstr "Message de fermeture :"
+msgstr ""
 
 msgid "Got it"
-msgstr "D'accord"
+msgstr ""
 
 msgid "Learn more link"
-msgstr "Lien pour en savoir plus"
+msgstr ""
 
 msgid "Learn more message:"
-msgstr "Message pour en savoir plus :"
+msgstr ""
 
 msgid "(leave this field empty to not include this link)"
-msgstr "(laissez ce champ vide pour ne pas inclure de lien)"
+msgstr ""
 
 msgid "Learn more"
-msgstr "En savoir plus"
+msgstr ""
 
 msgid "URL (learn more):"
-msgstr "URL pour en savoir plus :"
+msgstr ""
 
 msgid "https://www.cookiechoices.org/"
-msgstr "https://www.cookiechoices.org/"
+msgstr ""
 
 msgid "Display message on every page"
-msgstr "Afficher le message sur toutes les pages"
+msgstr ""
 
 msgid "Display message as:"
-msgstr "Afficher le message dans :"
+msgstr ""

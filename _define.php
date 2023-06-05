@@ -14,13 +14,16 @@ $this->registerModule(
     'cookiechoices',
     'Cookie Consent System',
     'Franck Paul',
-    '1.0',
+    '2.0',
     [
         'requires'    => [['core', '2.26']],
         'permissions' => dcCore::app()->auth->makePermissions([
             dcAuth::PERMISSION_CONTENT_ADMIN,
         ]),
-        'type' => 'plugin',
+        'type'     => 'plugin',
+        'settings' => [
+            'blog' => '#params.cookiechoices',
+        ],
 
         'details'    => 'https://open-time.net/?q=cookiechoices',
         'support'    => 'https://github.com/franck-paul/cookiechoices',

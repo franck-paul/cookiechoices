@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 cookiechoices module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 13:29+0200\n"
+"POT-Creation-Date: 2023-06-05 15:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,88 +16,94 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../git-plugins/cookiechoices/_admin.php:21
-#: ../git-plugins/cookiechoices/_admin.php:35
+#: ../git-plugins/cookiechoices/src/Backend.php:27
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:58
 msgid "Cookie Consent System"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:21
+#: ../git-plugins/cookiechoices/src/Backend.php:27
 msgid "cookiechoices"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:29
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:41
 msgid "A dialog box"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:30
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:42
 msgid "A bar on top"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:31
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:43
 msgid "A bar on bottom"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:38
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:63
 msgid "Enable Cookie Consent System"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:42
-msgid "Your message for visitors here:"
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:67
+msgid "Messages"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:43
-#: ../git-plugins/cookiechoices/_admin.php:48
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:74
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:89
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:107
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:122
 msgid "Message"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:45
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:76
+msgid "Your message for visitors here:"
+msgstr ""
+
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:81
 msgid "Cookies help us deliver our services. By using our services, you agree to our use of cookies."
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:45
-#: ../git-plugins/cookiechoices/_admin.php:50
-#: ../git-plugins/cookiechoices/_admin.php:57
-#: ../git-plugins/cookiechoices/_admin.php:63
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:81
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:96
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:114
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:129
 msgid "Example:"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:47
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:91
 msgid "Close message:"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:50
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:96
 msgid "Got it"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:52
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:100
 msgid "Learn more link"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:54
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:109
 msgid "Learn more message:"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:57
-msgid "Learn more"
-msgstr ""
-
-#: ../git-plugins/cookiechoices/_admin.php:58
-#: ../git-plugins/cookiechoices/_admin.php:64
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:114
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:129
 msgid "(leave this field empty to not include this link)"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:60
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:114
+msgid "Learn more"
+msgstr ""
+
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:124
 msgid "URL (learn more):"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:63
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:129
 msgid "https://www.cookiechoices.org/"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:71
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:136
 msgid "Display message on every page"
 msgstr ""
 
-#: ../git-plugins/cookiechoices/_admin.php:73
+#: ../git-plugins/cookiechoices/src/BackendBehaviors.php:138
 msgid "Display message as:"
 msgstr ""
