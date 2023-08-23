@@ -34,7 +34,7 @@ class Install extends Process
 
         try {
             // Init
-            $settings = dcCore::app()->blog->settings->get(My::id());
+            $settings = My::settings();
 
             $settings->put('message', 'By using our services, you agree to our use of cookies.', dcNamespace::NS_STRING, 'Visitor message', false, true);
             $settings->put('close', 'Got it', dcNamespace::NS_STRING, 'Close message', false, true);

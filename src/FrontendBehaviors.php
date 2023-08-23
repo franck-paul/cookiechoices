@@ -21,7 +21,7 @@ class FrontendBehaviors
 {
     public static function publicFooterContent()
     {
-        $settings = dcCore::app()->blog->settings->get(My::id());
+        $settings = My::settings();
         if ($settings->enabled && $settings->message != '') {
             if ($settings->anywhere || dcCore::app()->url->type == 'default') {
                 $res = My::jsLoad('cookiechoices.js');

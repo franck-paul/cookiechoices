@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\cookiechoices;
 
-use dcCore;
 use dcNamespace;
 use Dotclear\Helper\Html\Form\Checkbox;
 use Dotclear\Helper\Html\Form\Div;
@@ -34,7 +33,7 @@ class BackendBehaviors
         /**
          * @var        \dcNamespace
          */
-        $settings = dcCore::app()->blog->settings->get(My::id());
+        $settings = My::settings();
 
         // Appearances of message
         $cookiechoices_appearance = [
@@ -142,7 +141,7 @@ class BackendBehaviors
     }
     public static function adminBeforeBlogSettingsUpdate()
     {
-        $settings = dcCore::app()->blog->settings->get(My::id());
+        $settings = My::settings();
 
         $settings->put('enabled', !empty($_POST['cookiechoices_enabled']), dcNamespace::NS_BOOL);
         $settings->put('message', empty($_POST['cookiechoices_message']) ? '' : $_POST['cookiechoices_message'], dcNamespace::NS_STRING);
