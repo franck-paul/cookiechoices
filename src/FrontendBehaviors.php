@@ -19,7 +19,7 @@ use Dotclear\Helper\Html\Html;
 
 class FrontendBehaviors
 {
-    public static function publicFooterContent()
+    public static function publicFooterContent(): string
     {
         $settings = My::settings();
         if ($settings->enabled && $settings->message != '') {
@@ -43,5 +43,7 @@ class FrontendBehaviors
                 echo $res;
             }
         }
+
+        return '';
     }
 }

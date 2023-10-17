@@ -28,11 +28,8 @@ use Dotclear\Helper\Html\Html;
 
 class BackendBehaviors
 {
-    public static function adminBlogPreferencesForm()
+    public static function adminBlogPreferencesForm(): string
     {
-        /**
-         * @var        \dcNamespace
-         */
         $settings = My::settings();
 
         // Appearances of message
@@ -138,8 +135,11 @@ class BackendBehaviors
             ...$appearances,
         ])
         ->render();
+
+        return '';
     }
-    public static function adminBeforeBlogSettingsUpdate()
+
+    public static function adminBeforeBlogSettingsUpdate(): string
     {
         $settings = My::settings();
 
@@ -150,5 +150,7 @@ class BackendBehaviors
         $settings->put('url', empty($_POST['cookiechoices_url']) ? '' : $_POST['cookiechoices_url'], dcNamespace::NS_STRING);
         $settings->put('appearance', $_POST['cookiechoices_appearance'], dcNamespace::NS_INT);
         $settings->put('anywhere', !empty($_POST['cookiechoices_anywhere']), dcNamespace::NS_BOOL);
+
+        return '';
     }
 }
