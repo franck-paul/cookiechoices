@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\cookiechoices;
 
-use dcCore;
+use Dotclear\App;
 use Dotclear\Helper\Html\Html;
 
 class FrontendBehaviors
@@ -23,7 +23,7 @@ class FrontendBehaviors
     {
         $settings = My::settings();
         if ($settings->enabled && $settings->message != '') {
-            if ($settings->anywhere || dcCore::app()->url->type == 'default') {
+            if ($settings->anywhere || App::url()->type == 'default') {
                 $res = My::jsLoad('cookiechoices.js');
                 $res .= '<script>' . "\n" .
                     'document.addEventListener(\'DOMContentLoaded\', function(event) {' . "\n";

@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\cookiechoices;
 
-use dcNamespace;
+use Dotclear\App;
 use Dotclear\Helper\Html\Form\Checkbox;
 use Dotclear\Helper\Html\Form\Div;
 use Dotclear\Helper\Html\Form\Fieldset;
@@ -143,13 +143,13 @@ class BackendBehaviors
     {
         $settings = My::settings();
 
-        $settings->put('enabled', !empty($_POST['cookiechoices_enabled']), dcNamespace::NS_BOOL);
-        $settings->put('message', empty($_POST['cookiechoices_message']) ? '' : $_POST['cookiechoices_message'], dcNamespace::NS_STRING);
-        $settings->put('close', empty($_POST['cookiechoices_close']) ? '' : $_POST['cookiechoices_close'], dcNamespace::NS_STRING);
-        $settings->put('learnmore', empty($_POST['cookiechoices_learnmore']) ? '' : $_POST['cookiechoices_learnmore'], dcNamespace::NS_STRING);
-        $settings->put('url', empty($_POST['cookiechoices_url']) ? '' : $_POST['cookiechoices_url'], dcNamespace::NS_STRING);
-        $settings->put('appearance', $_POST['cookiechoices_appearance'], dcNamespace::NS_INT);
-        $settings->put('anywhere', !empty($_POST['cookiechoices_anywhere']), dcNamespace::NS_BOOL);
+        $settings->put('enabled', !empty($_POST['cookiechoices_enabled']), App::blogWorkspace()::NS_BOOL);
+        $settings->put('message', empty($_POST['cookiechoices_message']) ? '' : $_POST['cookiechoices_message'], App::blogWorkspace()::NS_STRING);
+        $settings->put('close', empty($_POST['cookiechoices_close']) ? '' : $_POST['cookiechoices_close'], App::blogWorkspace()::NS_STRING);
+        $settings->put('learnmore', empty($_POST['cookiechoices_learnmore']) ? '' : $_POST['cookiechoices_learnmore'], App::blogWorkspace()::NS_STRING);
+        $settings->put('url', empty($_POST['cookiechoices_url']) ? '' : $_POST['cookiechoices_url'], App::blogWorkspace()::NS_STRING);
+        $settings->put('appearance', $_POST['cookiechoices_appearance'], App::blogWorkspace()::NS_INT);
+        $settings->put('anywhere', !empty($_POST['cookiechoices_anywhere']), App::blogWorkspace()::NS_BOOL);
 
         return '';
     }

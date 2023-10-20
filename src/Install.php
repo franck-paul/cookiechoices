@@ -14,8 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\cookiechoices;
 
-use dcCore;
-use dcNamespace;
+use Dotclear\App;
 use Dotclear\Core\Process;
 use Exception;
 
@@ -36,14 +35,14 @@ class Install extends Process
             // Init
             $settings = My::settings();
 
-            $settings->put('message', 'By using our services, you agree to our use of cookies.', dcNamespace::NS_STRING, 'Visitor message', false, true);
-            $settings->put('close', 'Got it', dcNamespace::NS_STRING, 'Close message', false, true);
-            $settings->put('learnmore', 'Learn more', dcNamespace::NS_STRING, 'Learn more message', false, true);
-            $settings->put('url', 'https://www.cookiechoices.org/', dcNamespace::NS_STRING, 'Learn more URL', false, true);
-            $settings->put('appearance', 2, dcNamespace::NS_INT, 'Message appearance', false, true);
-            $settings->put('anywhere', false, dcNamespace::NS_BOOL, 'Display message on every page', false, true);
+            $settings->put('message', 'By using our services, you agree to our use of cookies.', App::blogWorkspace()::NS_STRING, 'Visitor message', false, true);
+            $settings->put('close', 'Got it', App::blogWorkspace()::NS_STRING, 'Close message', false, true);
+            $settings->put('learnmore', 'Learn more', App::blogWorkspace()::NS_STRING, 'Learn more message', false, true);
+            $settings->put('url', 'https://www.cookiechoices.org/', App::blogWorkspace()::NS_STRING, 'Learn more URL', false, true);
+            $settings->put('appearance', 2, App::blogWorkspace()::NS_INT, 'Message appearance', false, true);
+            $settings->put('anywhere', false, App::blogWorkspace()::NS_BOOL, 'Display message on every page', false, true);
         } catch (Exception $e) {
-            dcCore::app()->error->add($e->getMessage());
+            App::error()->add($e->getMessage());
         }
 
         return true;
