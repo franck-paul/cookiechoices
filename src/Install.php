@@ -41,8 +41,8 @@ class Install extends Process
             $settings->put('url', 'https://www.cookiechoices.org/', App::blogWorkspace()::NS_STRING, 'Learn more URL', false, true);
             $settings->put('appearance', 2, App::blogWorkspace()::NS_INT, 'Message appearance', false, true);
             $settings->put('anywhere', false, App::blogWorkspace()::NS_BOOL, 'Display message on every page', false, true);
-        } catch (Exception $e) {
-            App::error()->add($e->getMessage());
+        } catch (Exception $exception) {
+            App::error()->add($exception->getMessage());
         }
 
         return true;

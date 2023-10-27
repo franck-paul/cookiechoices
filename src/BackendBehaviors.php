@@ -45,7 +45,7 @@ class BackendBehaviors
             $appearances[] = (new Radio(['cookiechoices_appearance', 'cookiechoices_appearance-' . $i], $settings->appearance == $k))
                 ->value($k)
                 ->label((new Label($v, Label::INSIDE_TEXT_AFTER)));
-            $i++;
+            ++$i;
         }
 
         // Add fieldset for plugin options
