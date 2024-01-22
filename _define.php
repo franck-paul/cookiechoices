@@ -14,7 +14,7 @@ $this->registerModule(
     'cookiechoices',
     'Cookie Consent System',
     'Franck Paul',
-    '4.1',
+    '4.2',
     [
         'requires'    => [['core', '2.28']],
         'permissions' => 'My',
