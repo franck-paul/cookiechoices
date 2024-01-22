@@ -22,24 +22,18 @@ class FrontendBehaviors
     public static function publicFooterContent(): string
     {
         $settings = My::settings();
-        if ($settings->enabled && $settings->message != '' && ($settings->anywhere || App::url()->getType() == 'default')) {
-            $res = My::jsLoad('cookiechoices.js');
-            $res .= '<script>' . "\n" .
-                'document.addEventListener(\'DOMContentLoaded\', function(event) {' . "\n";
-            if (!$settings->appearance) {
-                $res .= '    cookieChoices.showCookieConsentDialog(' . "\n";
-            } else {
-                $res .= '    cookieChoices.showCookieConsentBar(' . "\n";
-            }
-
-            $res .= '   \'' . Html::escapeJS($settings->message) . '\',' . "\n" .
-            '   \'' . Html::escapeJS($settings->close) . '\',' . "\n" .
-            '   \'' . Html::escapeJS($settings->learnmore) . '\',' . "\n" .
-            '   \'' . Html::escapeJS($settings->url) . '\',' . "\n" .
-                '   ' . ($settings->appearance == 1 ? 'false' : 'true') . ');' . "\n" .
-                '});' . "\n" .
-                '</script>' . "\n";
-            echo $res;
+        if ($settings->enabled && $settings->message !== '' && ($settings->anywhere || App::url()->getType() == 'default')) {
+            echo
+            My::jsLoad('cookiechoices.js') .
+            Html::jsJson('cookiechoices_settings', [
+                'message'   => $settings->message,
+                'close'     => $settings->close,
+                'learnmore' => $settings->learnmore,
+                'url'       => $settings->url,
+                'dialog'    => $settings->appearance === 0,
+                'bottom'    => $settings->appearance === 2,
+            ]) .
+            My::jsLoad('public.js');
         }
 
         return '';
