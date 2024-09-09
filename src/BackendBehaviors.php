@@ -58,7 +58,7 @@ class BackendBehaviors
                     ->value(1)
                     ->label((new Label(__('Enable Cookie Consent System'), Label::INSIDE_TEXT_AFTER))),
             ]),
-            (new Div())->class(['two-cols', 'clearfix'])->items([
+            (new Div())->class('two-cols')->items([
                 (new Div())->class('col')->items([
                     (new Text('h5', __('Messages'))),
                     (new Para())->items([

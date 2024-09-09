@@ -25,6 +25,6 @@ $this->registerModule(
 
         'details'    => 'https://open-time.net/?q=cookiechoices',
         'support'    => 'https://github.com/franck-paul/cookiechoices',
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/cookiechoices/master/dcstore.xml',
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/cookiechoices/main/dcstore.xml',
     ]
 );
