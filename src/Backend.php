@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief cookiechoices, a plugin for Dotclear 2
  *
@@ -22,7 +23,8 @@ class Backend extends Process
     public static function init(): bool
     {
         // dead but useful code, in order to have translations
-        __('cookiechoices') . __('Cookie Consent System');
+        __('cookiechoices');
+        __('Cookie Consent System');
 
         return self::status(My::checkContext(My::BACKEND));
     }
