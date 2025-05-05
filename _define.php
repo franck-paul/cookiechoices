@@ -18,7 +18,7 @@ $this->registerModule(
     '4.3',
     [
         'date'        => '2003-08-13T13:42:00+0100',
-        'requires'    => [['core', '2.28']],
+        'requires'    => [['core', '2.34']],
         'permissions' => 'My',
         'type'        => 'plugin',
         'settings'    => [
@@ -28,5 +28,6 @@ $this->registerModule(
         'details'    => 'https://open-time.net/?q=cookiechoices',
         'support'    => 'https://github.com/franck-paul/cookiechoices',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/cookiechoices/main/dcstore.xml',
+        'license'    => 'gpl2',
     ]
 );

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief cookiechoices, a plugin for Dotclear 2
  *
@@ -21,8 +22,10 @@ use Dotclear\Helper\Html\Form\Fieldset;
 use Dotclear\Helper\Html\Form\Input;
 use Dotclear\Helper\Html\Form\Label;
 use Dotclear\Helper\Html\Form\Legend;
+use Dotclear\Helper\Html\Form\Note;
 use Dotclear\Helper\Html\Form\Para;
 use Dotclear\Helper\Html\Form\Radio;
+use Dotclear\Helper\Html\Form\Span;
 use Dotclear\Helper\Html\Form\Text;
 use Dotclear\Helper\Html\Html;
 
@@ -57,6 +60,9 @@ class BackendBehaviors
                 (new Checkbox('cookiechoices_enabled', $settings->enabled))
                     ->value(1)
                     ->label((new Label(__('Enable Cookie Consent System'), Label::INSIDE_TEXT_AFTER))),
+                (new Note())
+                    ->class('form-note')
+                    ->text(sprintf(__('Fields preceded by %s are mandatory.'), (new Span('*'))->class('required')->render())),
             ]),
             (new Div())->class('two-cols')->items([
                 (new Div())->class('col')->items([
@@ -69,7 +75,7 @@ class BackendBehaviors
                             ->required(true)
                             ->placeholder(__('Message'))
                             ->label((new Label(
-                                (new Text('abbr', '*'))->title(__('Required field'))->render() . __('Your message for visitors here:'),
+                                (new Span('*'))->render() . __('Your message for visitors here:'),
                                 Label::OUTSIDE_TEXT_BEFORE
                             ))->id('page_title_label')->class('required')->title(__('Required field'))),
                     ]),
@@ -84,7 +90,7 @@ class BackendBehaviors
                             ->required(true)
                             ->placeholder(__('Message'))
                             ->label((new Label(
-                                (new Text('abbr', '*'))->title(__('Required field'))->render() . __('Close message:'),
+                                (new Span('*'))->render() . __('Close message:'),
                                 Label::OUTSIDE_TEXT_BEFORE
                             ))->id('page_title_label')->class('required')->title(__('Required field'))),
                     ]),
@@ -102,7 +108,7 @@ class BackendBehaviors
                             ->required(true)
                             ->placeholder(__('Message'))
                             ->label((new Label(
-                                (new Text('abbr', '*'))->title(__('Required field'))->render() . __('Learn more message:'),
+                                (new Span('*'))->render() . __('Learn more message:'),
                                 Label::OUTSIDE_TEXT_BEFORE
                             ))->id('page_title_label')->class('required')->title(__('Required field'))),
                     ]),
@@ -117,7 +123,7 @@ class BackendBehaviors
                             ->required(true)
                             ->placeholder(__('Message'))
                             ->label((new Label(
-                                (new Text('abbr', '*'))->title(__('Required field'))->render() . __('URL (learn more):'),
+                                (new Span('*'))->render() . __('URL (learn more):'),
                                 Label::OUTSIDE_TEXT_BEFORE
                             ))->id('page_title_label')->class('required')->title(__('Required field'))),
                     ]),
