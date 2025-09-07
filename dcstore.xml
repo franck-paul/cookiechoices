@@ -1,12 +1,12 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="cookiechoices">
     <name>cookiechoices</name>
-    <version>5.0</version>
+    <version>6.0</version>
     <author>Franck Paul</author>
     <desc>Cookie Consent System</desc>
-    <date>2025-05-05T13:34:48+0200</date>
-    <file>https://github.com/franck-paul/cookiechoices/releases/download/5.0/plugin-cookiechoices-5.0.zip</file>
-    <da:dcmin>2.34</da:dcmin>
+    <date>2025-09-07T16:10:22+0200</date>
+    <file>https://github.com/franck-paul/cookiechoices/releases/download/6.0/plugin-cookiechoices-6.0.zip</file>
+    <da:dcmin>2.36</da:dcmin>
     <da:details>https://open-time.net/?q=cookiechoices</da:details>
     <da:support>https://github.com/franck-paul/cookiechoices</da:support>
   </module>
