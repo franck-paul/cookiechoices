@@ -15,9 +15,9 @@ $this->registerModule(
     'cookiechoices',
     'Cookie Consent System',
     'Franck Paul',
-    '5.0',
+    '6.0',
     [
-        'date'        => '2025-05-05T13:34:48+0200',
+        'date'        => '2025-09-07T16:10:22+0200',
         'requires'    => [['core', '2.36']],
         'permissions' => 'My',
         'type'        => 'plugin',
