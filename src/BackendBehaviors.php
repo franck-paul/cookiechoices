@@ -8,7 +8,7 @@
  *
  * @author Franck Paul and contributors
  *
- * @copyright Franck Paul carnet.franck.paul@gmail.com
+ * @copyright Franck Paul contact@open-time.net
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
 declare(strict_types=1);
@@ -51,13 +51,18 @@ class BackendBehaviors
             ++$i;
         }
 
+        $message   = is_string($message = $settings->message) ? $message : '';
+        $close     = is_string($close = $settings->close) ? $close : '';
+        $learnmore = is_string($learnmore = $settings->learnmore) ? $learnmore : '';
+        $url       = is_string($url = $settings->url) ? $url : '';
+
         // Add fieldset for plugin options
         echo
         (new Fieldset('cookiechoices'))
         ->legend((new Legend(__('Cookie Consent System'))))
         ->fields([
             (new Para())->items([
-                (new Checkbox('cookiechoices_enabled', $settings->enabled))
+                (new Checkbox('cookiechoices_enabled', (bool) $settings->enabled))
                     ->value(1)
                     ->label((new Label(__('Enable Cookie Consent System'), Label::INSIDE_TEXT_AFTER))),
                 (new Note())
@@ -71,7 +76,7 @@ class BackendBehaviors
                         (new Input('cookiechoices_message'))
                             ->size(50)
                             ->maxlength(255)
-                            ->value(Html::escapeHTML($settings->message))
+                            ->value(Html::escapeHTML($message))
                             ->required(true)
                             ->placeholder(__('Message'))
                             ->label((new Label(
@@ -86,7 +91,7 @@ class BackendBehaviors
                         (new Input('cookiechoices_close'))
                             ->size(30)
                             ->maxlength(255)
-                            ->value(Html::escapeHTML($settings->close))
+                            ->value(Html::escapeHTML($close))
                             ->required(true)
                             ->placeholder(__('Message'))
                             ->label((new Label(
@@ -104,7 +109,7 @@ class BackendBehaviors
                         (new Input('cookiechoices_learnmore'))
                             ->size(30)
                             ->maxlength(255)
-                            ->value(Html::escapeHTML($settings->learnmore))
+                            ->value(Html::escapeHTML($learnmore))
                             ->required(true)
                             ->placeholder(__('Message'))
                             ->label((new Label(
@@ -119,7 +124,7 @@ class BackendBehaviors
                         (new Input('cookiechoices_url'))
                             ->size(30)
                             ->maxlength(255)
-                            ->value(Html::escapeHTML($settings->url))
+                            ->value(Html::escapeHTML($url))
                             ->required(true)
                             ->placeholder(__('Message'))
                             ->label((new Label(
@@ -133,7 +138,7 @@ class BackendBehaviors
                 ]),
             ]),
             (new Para())->items([
-                (new Checkbox('cookiechoices_anywhere', $settings->anywhere))
+                (new Checkbox('cookiechoices_anywhere', (bool) $settings->anywhere))
                     ->value(1)
                     ->label((new Label(__('Display message on every page'), Label::INSIDE_TEXT_AFTER))),
             ]),
