@@ -123,16 +123,17 @@
     }
 
     function _showCookieConsent(cookieText, dismissText, linkText, linkHref, isDialog, bottomBar) {
-      if (_shouldDisplayConsent()) {
-        _removeCookieConsent();
-        const consentElement = isDialog
-          ? _createDialogElement(cookieText, dismissText, linkText, linkHref)
-          : _createHeaderElement(cookieText, dismissText, linkText, linkHref, bottomBar);
-        const fragment = document.createDocumentFragment();
-        fragment.appendChild(consentElement);
-        document.body.appendChild(fragment.cloneNode(true));
-        document.getElementById(dismissLinkId).onclick = _dismissLinkClick;
+      if (!_shouldDisplayConsent()) {
+        return;
       }
+      _removeCookieConsent();
+      const consentElement = isDialog
+      ? _createDialogElement(cookieText, dismissText, linkText, linkHref)
+      : _createHeaderElement(cookieText, dismissText, linkText, linkHref, bottomBar);
+      const fragment = document.createDocumentFragment();
+      fragment.appendChild(consentElement);
+      document.body.appendChild(fragment.cloneNode(true));
+      document.getElementById(dismissLinkId).onclick = _dismissLinkClick;
     }
 
     function showCookieConsentBar(cookieText, dismissText, linkText, linkHref, bottomBar) {
