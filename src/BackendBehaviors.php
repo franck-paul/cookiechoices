@@ -45,16 +45,16 @@ class BackendBehaviors
         $appearances = [];
         $i           = 0;
         foreach ($cookiechoices_appearance as $k => $v) {
-            $appearances[] = (new Radio(['cookiechoices_appearance', 'cookiechoices_appearance-' . $i], $settings->appearance == $k))
+            $appearances[] = (new Radio(['cookiechoices_appearance', 'cookiechoices_appearance-' . $i], $settings->getInt('appearance', false) === $k))
                 ->value($k)
                 ->label((new Label($v, Label::INSIDE_TEXT_AFTER)));
             ++$i;
         }
 
-        $message   = is_string($message = $settings->message) ? $message : '';
-        $close     = is_string($close = $settings->close) ? $close : '';
-        $learnmore = is_string($learnmore = $settings->learnmore) ? $learnmore : '';
-        $url       = is_string($url = $settings->url) ? $url : '';
+        $message   = $settings->getStr('message', false);
+        $close     = $settings->getStr('close', false);
+        $learnmore = $settings->getStr('learnmore', false);
+        $url       = $settings->getStr('url', false);
 
         // Add fieldset for plugin options
         echo
@@ -62,7 +62,7 @@ class BackendBehaviors
         ->legend((new Legend(__('Cookie Consent System'))))
         ->fields([
             (new Para())->items([
-                (new Checkbox('cookiechoices_enabled', (bool) $settings->enabled))
+                (new Checkbox('cookiechoices_enabled', $settings->getBool('enabled', false)))
                     ->value(1)
                     ->label((new Label(__('Enable Cookie Consent System'), Label::INSIDE_TEXT_AFTER))),
                 (new Note())
@@ -138,7 +138,7 @@ class BackendBehaviors
                 ]),
             ]),
             (new Para())->items([
-                (new Checkbox('cookiechoices_anywhere', (bool) $settings->anywhere))
+                (new Checkbox('cookiechoices_anywhere', $settings->getBool('anywhere', false)))
                     ->value(1)
                     ->label((new Label(__('Display message on every page'), Label::INSIDE_TEXT_AFTER))),
             ]),

@@ -23,16 +23,19 @@ class FrontendBehaviors
     public static function publicFooterContent(): string
     {
         $settings = My::settings();
-        if ($settings->enabled && $settings->message !== '' && ($settings->anywhere || App::url()->getType() == 'default')) {
+        if ($settings->getBool('enabled')
+            && $settings->getStr('message', false) !== ''
+            && ($settings->getBool('anywhere') || App::url()->getType() === 'default' || App::url()->getType() === 'static')
+        ) {
             echo
             My::jsLoad('cookiechoices.js') .
             Html::jsJson('cookiechoices_settings', [
-                'message'   => $settings->message,
-                'close'     => $settings->close,
-                'learnmore' => $settings->learnmore,
-                'url'       => $settings->url,
-                'dialog'    => $settings->appearance === 0,
-                'bottom'    => $settings->appearance === 2,
+                'message'   => $settings->getStr('message'),
+                'close'     => $settings->getStr('close'),
+                'learnmore' => $settings->getStr('learnmore'),
+                'url'       => $settings->getStr('url'),
+                'dialog'    => $settings->getInt('appearance', false) === 0,
+                'bottom'    => $settings->getInt('appearance', false) === 2,
             ]) .
             My::jsLoad('public.js');
         }
