@@ -25,7 +25,7 @@ class FrontendBehaviors
         $settings = My::settings();
         if ($settings->getBool('enabled')
             && $settings->getStr('message', false) !== ''
-            && ($settings->getBool('anywhere') || App::url()->getType() === 'default' || App::url()->getType() === 'static')
+            && ($settings->getBool('anywhere') || App::url()->isType(['default', 'static']))
         ) {
             echo
             My::jsLoad('cookiechoices.js') .
