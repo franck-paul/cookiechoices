@@ -11,23 +11,27 @@
  * @copyright Franck Paul contact@open-time.net
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-$this->registerModule(
-    'cookiechoices',
-    'Cookie Consent System',
-    'Franck Paul',
-    '7.0',
-    [
-        'date'        => '2026-08-03T09:49:37+0200',
-        'requires'    => [['core', '2.39']],
-        'permissions' => 'My',
-        'type'        => 'plugin',
-        'settings'    => [
-            'blog' => '#params.cookiechoices',
-        ],
+declare(strict_types=1);
 
-        'details'    => 'https://open-time.net/?q=cookiechoices',
-        'support'    => 'https://github.com/franck-paul/cookiechoices',
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/cookiechoices/main/dcstore.xml',
-        'license'    => 'gpl2',
-    ]
-);
+if (isset($this) && is_object($this) && method_exists($this, 'registerModule') && isset($this->id) && is_string($this->id)) {
+    $this->registerModule(
+        'cookiechoices',
+        'Cookie Consent System',
+        'Franck Paul',
+        '7.0',
+        [
+            'date'        => '2026-08-03T09:49:37+0200',
+            'requires'    => [['core', '2.39']],
+            'permissions' => 'My',
+            'type'        => 'plugin',
+            'settings'    => [
+                'blog' => '#params.cookiechoices',
+            ],
+
+            'details'    => 'https://open-time.net/?q=cookiechoices',
+            'support'    => 'https://github.com/franck-paul/cookiechoices',
+            'repository' => 'https://raw.githubusercontent.com/franck-paul/cookiechoices/main/dcstore.xml',
+            'license'    => 'gpl2',
+        ]
+    );
+}
