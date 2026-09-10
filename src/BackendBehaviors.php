@@ -84,9 +84,9 @@ class BackendBehaviors
                                 Label::OUTSIDE_TEXT_BEFORE
                             ))->id('page_title_label')->class('required')->title(__('Required field'))),
                     ]),
-                    (new Para())->class('form-note')->items([
-                        (new Text(null, __('Example:') . ' ' . __('Cookies help us deliver our services. By using our services, you agree to our use of cookies.'))),
-                    ]),
+                    (new Note())
+                        ->class('form-note')
+                        ->text(__('Example:') . ' ' . __('Cookies help us deliver our services. By using our services, you agree to our use of cookies.')),
                     (new Para())->items([
                         (new Input('cookiechoices_close'))
                             ->size(30)
@@ -99,9 +99,9 @@ class BackendBehaviors
                                 Label::OUTSIDE_TEXT_BEFORE
                             ))->id('page_title_label')->class('required')->title(__('Required field'))),
                     ]),
-                    (new Para())->class('form-note')->items([
-                        (new Text(null, __('Example:') . ' ' . __('Got it'))),
-                    ]),
+                    (new Note())
+                        ->class('form-note')
+                        ->text(__('Example:') . ' ' . __('Got it')),
                 ]),
                 (new Div())->class('col')->items([
                     (new Text('h5', __('Learn more link'))),
@@ -117,9 +117,9 @@ class BackendBehaviors
                                 Label::OUTSIDE_TEXT_BEFORE
                             ))->id('page_title_label')->class('required')->title(__('Required field'))),
                     ]),
-                    (new Para())->class('form-note')->items([
-                        (new Text(null, __('Example:') . ' ' . __('Learn more') . ' ' . __('(leave this field empty to not include this link)'))),
-                    ]),
+                    (new Note())
+                        ->class('form-note')
+                        ->text(__('Example:') . ' ' . __('Learn more') . ' ' . __('(leave this field empty to not include this link)')),
                     (new Para())->items([
                         (new Input('cookiechoices_url'))
                             ->size(30)
@@ -132,9 +132,9 @@ class BackendBehaviors
                                 Label::OUTSIDE_TEXT_BEFORE
                             ))->id('page_title_label')->class('required')->title(__('Required field'))),
                     ]),
-                    (new Para())->class('form-note')->items([
-                        (new Text(null, __('Example:') . ' ' . __('https://www.cookiechoices.org/') . ' ' . __('(leave this field empty to not include this link)'))),
-                    ]),
+                    (new Note())
+                        ->class('form-note')
+                        ->text(__('Example:') . ' ' . __('https://www.cookiechoices.org/') . ' ' . __('(leave this field empty to not include this link)')),
                 ]),
             ]),
             (new Para())->items([
