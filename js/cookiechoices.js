@@ -70,8 +70,8 @@
 
       const dismissLink = _createDismissLink(dismissText);
       dismissLink.style.display = 'block';
-      dismissLink.style.textAlign = 'right';
-      dismissLink.style.marginTop = '8px';
+      dismissLink.style.textAlign = 'end';
+      dismissLink.style.marginBlockStart = '8px';
 
       content.appendChild(_createConsentText(cookieText));
       if (!!linkText && !!linkHref) {
@@ -103,7 +103,7 @@
       _setElementText(dismissLink, dismissText);
       dismissLink.id = dismissLinkId;
       dismissLink.href = '#';
-      dismissLink.style.marginLeft = '24px';
+      dismissLink.style.marginInlineStart = '24px';
       return dismissLink;
     }
 
@@ -112,7 +112,7 @@
       _setElementText(infoLink, linkText);
       infoLink.href = linkHref;
       infoLink.target = '_blank';
-      infoLink.style.marginLeft = '8px';
+      infoLink.style.marginInlineStart = '8px';
       return infoLink;
     }
 
@@ -128,8 +128,8 @@
       }
       _removeCookieConsent();
       const consentElement = isDialog
-      ? _createDialogElement(cookieText, dismissText, linkText, linkHref)
-      : _createHeaderElement(cookieText, dismissText, linkText, linkHref, bottomBar);
+        ? _createDialogElement(cookieText, dismissText, linkText, linkHref)
+        : _createHeaderElement(cookieText, dismissText, linkText, linkHref, bottomBar);
       const fragment = document.createDocumentFragment();
       fragment.appendChild(consentElement);
       document.body.appendChild(fragment.cloneNode(true));
